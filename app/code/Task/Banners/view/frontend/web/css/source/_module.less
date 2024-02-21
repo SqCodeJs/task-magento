@@ -1,0 +1,133 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .banner-section {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-prefix-flex-direction(column);
+        .lib-vendor-box-align(center);
+
+        & > .banner-title {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        & > .banners-wrapper {
+            & .banner {
+                position: relative;
+                border-radius: 10px;
+
+                & > .banner-title, .banner-description {
+                    position: absolute;
+                    color: #e7dfdf;
+                }
+
+                & > .banner-title {
+                    display: block;
+                    text-align: center;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    text-transform: uppercase;
+                    background-color: rgba(17, 7, 7, 0.15);
+                    box-shadow: 0px 0px 20px 20px rgba(7, 7, 7, 0.15);
+                    border-radius: 10px;
+                }
+
+                & > .banner-description {
+                    top: 110%;
+                    left: 0;
+                    right: 0;
+                    transition: 0.4s;
+                    background-color: rgba(7, 7, 7, 0.4);
+
+                }
+
+                & > .banner-image {
+                    max-width: 100%;
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                }
+
+                &:hover .banner-description {
+                    letter-spacing: 4px;
+                    top: 64%;
+                    bottom: 0;
+                    border-radius: 10px;
+                }
+            }
+        }   
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .banner-section {
+        margin: 10px 0;
+
+        & > .banner-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        & > .banners-wrapper {
+            max-width: 100%;
+
+            & .slick-arrow {
+                display: none !important;
+            }
+            
+            & .banner {
+                & > .banner-title {
+                    padding: 60px;
+                    font-size: 28px;
+                    letter-spacing: 2px;
+                }
+
+                & > .banner-description {
+                    padding: 8px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .banner-section {
+        margin: 20px 0;
+
+        & > .banner-title {
+            font-size: 38px;
+            margin-bottom: 30px;
+        }
+
+        & > .banners-wrapper {
+            max-width: 747px;
+            max-height: 545px;
+            overflow: hidden;
+
+            & .banner {
+                & > .banner-title {
+                    padding: 80px;
+                    font-size: 32px;
+                    letter-spacing: 4px;
+                }
+
+                & > .banner-description {
+                    padding: 30px 20px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
