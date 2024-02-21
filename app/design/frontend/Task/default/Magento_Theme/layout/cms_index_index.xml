@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block name="banners" class="Magento\Cms\Block\BlockByIdentifier" before="-">
+                <arguments>
+                    <argument name="identifier" xsi:type="string">custom_banners</argument>
+                </arguments>
+            </block>
+            <block name="about-mockup" class="Magento\Framework\View\Element\Template" after="banners" template="Magento_Theme::about.phtml" />
+            <block name="custom-form-mockup" class="Magento\Framework\View\Element\Template" after="about-mockup" template="Magento_Theme::form.phtml" />
+        </referenceContainer>
+    </body>
+</page>
