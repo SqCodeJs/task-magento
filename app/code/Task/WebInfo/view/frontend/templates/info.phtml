@@ -1,0 +1,30 @@
+<div class="header info">
+    <div class="content-info">
+        <ul class="user-nav">
+            <li>
+                <a href="<?= $block->getUrl('delivery-and-payment') ?>">
+                    <?= __("Delivery and payment") ?>
+                </a>
+            </li>
+            <li>
+                <a href="<?= $block->getUrl('guide') ?>">
+                    <?= __('Guide') ?>
+                </a>
+            </li>
+        </ul>
+        <strong class="title">
+            <?= __('Tradition in every piece - family flavors from our bakery.') ?>
+        </strong>
+        <p class="contact">
+            <span>
+                <?= __('Write to us') . ":" ?>
+            </span>
+            <a href="tel:<?= $block->getPhoneNumber() ?>">
+                <?= $block->getPhoneNumber() ?>
+            </a> 
+            <a href="mailto:<?= $block->getEmailUs()?>">
+                <?= $block->getEmailUs()?>
+            </a>
+        </p>
+    </div>
+</div>
