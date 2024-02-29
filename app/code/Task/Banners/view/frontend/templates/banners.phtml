@@ -1,0 +1,23 @@
+<?php
+    $allBannersData = $block->getAllBannersData(); 
+?>
+
+<div class="banner-section">
+    <h3 class="banner-title">
+        <?= $block->getTitle() ?>
+    </h3>
+    <div class="banners-wrapper">
+        <?php foreach ($allBannersData as $bannerData): ?>
+            <div class="banner">
+                <h4 class="banner-title">
+                    <?= $bannerData['title'] ?>
+                </h4>
+                <div class="banner-description">
+                    <?= $bannerData['description'] ?>
+                </div>
+                <img class="banner-image" src="<?= $block->getViewFileUrl('Task_Banners::images/' . $bannerData['image'] . '.jpg') ?>" alt="<?= $bannerData['title'] ?>" />
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+

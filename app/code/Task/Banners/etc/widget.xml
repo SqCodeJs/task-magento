@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Task\Banners\Block\Banners" id="banners-slider">
+        <label>Task Banners</label>
+        <description>Banners Slider</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" visible="true" required="true">
+                <label>Title</label>
+                <description><![CDATA[<hr style="margin:20px 0;" /><h3>Banner 1</h3>]]></description>
+            </parameter>
+
+            <!-- Banner 1 -->
+            <parameter name="banner1_title" xsi:type="text" visible="true" required="true">
+                <label>Title</label>
+            </parameter>
+            <parameter name="banner1_description" xsi:type="text" visible="true" required="true">
+                <label>Description</label>
+            </parameter>
+            <parameter name="banner1_image" xsi:type="select" visible="true" required="true">
+                <label>Image</label>
+                <description><![CDATA[<hr style="margin:20px 0;" /><h3>Banner 2</h3>]]></description>
+                <options>
+                    <option name="baguette" value="baguette">
+                        <label>Baguette</label>
+                    </option>
+                    <option name="rolls" value="rolls">
+                        <label>Rolls</label>
+                    </option>
+                    <option name="breads" value="breads">
+                        <label>Breads</label>
+                    </option>
+                </options>
+            </parameter>
+
+            <!-- Banner 2 -->
+            <parameter name="banner2_title" xsi:type="text" visible="true" required="true">
+                <label>Title</label>
+            </parameter>
+            <parameter name="banner2_description" xsi:type="text" visible="true" required="true">
+                <label>Description</label>
+            </parameter>
+            <parameter name="banner2_image" xsi:type="select" visible="true" required="true">
+                <label>Image</label>
+                <description><![CDATA[<hr style="margin:20px 0;" /><h3>Banner 3</h3>]]></description>
+                <options>
+                    <option name="baguette" value="baguette">
+                        <label>Baguette</label>
+                    </option>
+                    <option name="rolls" value="rolls">
+                        <label>Rolls</label>
+                    </option>
+                    <option name="breads" value="breads">
+                        <label>Breads</label>
+                    </option>
+                </options>
+            </parameter>
+
+            <!-- Banner 3 -->
+            <parameter name="banner3_title" xsi:type="text" visible="true" required="true">
+                <label>Title</label>
+            </parameter>
+            <parameter name="banner3_description" xsi:type="text" visible="true" required="true">
+                <label>Description</label>
+            </parameter>
+            <parameter name="banner3_image" xsi:type="select" visible="true" required="true">
+                <label>Image</label>
+                <options>
+                    <option name="baguette" value="baguette">
+                        <label>Baguette</label>
+                    </option>
+                    <option name="rolls" value="rolls">
+                        <label>Rolls</label>
+                    </option>
+                    <option name="breads" value="breads">
+                        <label>Breads</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

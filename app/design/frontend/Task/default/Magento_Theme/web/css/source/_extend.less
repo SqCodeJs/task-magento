@@ -1,0 +1,346 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .form-container {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-prefix-flex-direction(column);
+        .lib-vendor-box-align(center);
+        justify-content: center;
+        width: 100%;
+
+        & .title {
+            font-weight: bold;
+        }
+
+        & > .form-content {
+            width: 100%;
+            max-width: @content__max;
+
+            & .label {
+                display: block;
+                font-weight: bold;
+
+                & > .required {
+                    color: @color-red10;
+                    padding-left: 4px;
+                }
+            }
+        }
+    }
+
+    .about-wrapper {
+        margin: auto;
+
+        & > .about-title {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        & > .about-content {
+            max-width: @content__max;
+            overflow: hidden;
+
+            & > .bakery-image, .bakery-hero-image {
+                max-width: 300px;
+            }
+
+            & > .bakery-image {
+                float: left;
+            }
+
+            & > .bakery-hero-image {
+                float: right;
+            }
+
+            & > .about-description {
+                display: block;
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .header.content {
+        & .logo {
+            margin: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }   
+    
+        & .panel.header {
+            .minicart-wrapper {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .form-container {
+        margin: 10px 0;
+
+        & .title {
+            font-size: 22px;
+        }
+
+        & > .form-content {
+
+            & > .field {
+                margin-bottom: 10px;
+
+                & > .label {
+                    margin-bottom: 4px;
+                }
+            }
+
+            & > .action-section {
+
+                & > .action.submit {
+                    width: 100%;
+                    padding: 6px 12px;
+                }
+            }
+        }
+    }
+
+    .about-wrapper {
+        margin: 20px auto;
+
+        & > .about-title {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        & > .about-content {
+            & > .bakery-image, .bakery-hero-image {
+                max-width: 200px;
+            }
+
+            & > .bakery-image {
+                margin: 0 16px 10px 0;
+            }
+
+            & > .bakery-hero-image {
+                margin: 0 0 10px 16px;
+            }
+
+            & > .about-description {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .header.content {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-prefix-flex-grow(1);
+        width: 100%;
+        margin-bottom: 20px;
+
+        & .logo {
+            margin: 0;
+        }
+        
+        & .minicart-wrapper {
+            order: 2
+        }
+
+        & .block.block-search {
+            & .nested {
+                display: none;
+            }
+        }
+
+        & .header.section-right {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-direction(column);
+            .lib-vendor-box-align(end);
+
+            & .panel.header {
+                .lib-vendor-prefix-display(flex);
+                padding-right: 0;
+
+                & .header.links {
+                    padding-top: 2px;
+
+                    a {
+                        font-size: 0;
+                        text-decoration: none;
+                    }
+
+                    & .link.wishlist a {
+                        &::before {
+                            font-family: 'Task-Theme' !important;
+                            content: '\e9da';
+                            display: inline;
+                            margin-right: 8px;
+                            font-size: 22px;
+                        }
+                    }
+
+                    & .link.authorization-link a {
+                        &::before {
+                            font-family: 'Task-Theme' !important;
+                            content: '\e933';
+                            display: inline;
+                            margin-right: 8px;
+                            font-size: 22px;
+                        }
+                    }
+
+                    & .greet.welcome {
+                        margin: 0;
+                    
+                        & > .not-logged-in {
+                            display: none;
+                        }
+                    }  
+                }
+
+                & .minicart-wrapper {
+                    margin-left: 4px;
+
+                    & .action.showcart::before {
+                        color: @theme__color__primary;
+                    }
+
+                    & .action.showcart:hover::before {
+                        color: @theme__color__primary-alt;
+                    }
+                }
+            }
+        }
+    }
+
+    .navigation {
+        width: 90%;
+
+        & ul {
+            padding: 0 20px;
+
+            & .level0 {
+                position: static;
+
+                & > .level-top {
+                    color: @theme__color__primary;
+
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                    
+                    &:hover {
+                        color: @theme__color__primary-alt;
+                    }
+                }
+
+                & .level0.submenu {
+                    width: 100%;
+                    min-height: 300px;
+                    background-color: #f5f5f5;
+                    left: 0 !important;
+
+                    & li.level1 {
+                        position: static;
+                        width: 30%;
+                        height: 100%;
+
+                        & a {
+                            .lib-vendor-prefix-display(flex);
+                            .lib-vendor-box-align(center);
+                        
+                            &::before {
+                                font-family: 'Task-Theme' !important;
+                                content: '\e932';
+                                display: inline;
+                                margin-right: 8px;
+                                font-size: 22px;
+                            }
+
+                            & .ui-menu-icon.ui-icon {
+                                order: 3;
+                                position: static;
+                                margin-left: auto;
+                                padding-right: 10px;
+                            }
+                        }
+
+                        & ul.level1 {
+                            top: 1px !important;
+                            bottom: 1px;
+                            left: 30% !important;
+                            right: 0 !important;
+                            border: none;
+                            box-shadow: none;
+                        
+                            & li {
+                                width: 40%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .form-container {
+        margin: 20px 0;
+
+        & .title {
+            font-size: 32px;
+        }
+
+        & > .form-content {
+
+            & > .field {
+                margin-bottom: 20px;
+
+                & > .label {
+                    margin-bottom: 6px;
+                }
+            }
+            & > .action-section {
+                & > .action.submit {
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+
+    .about-wrapper {
+        margin: 30px auto;
+        max-width: @content__max;
+
+        & > .about-title {
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        & > .about-content {
+            & > .bakery-image, .bakery-hero-image {
+                max-width: 340px;
+            }
+
+            & > .bakery-image {
+                margin: 0 20px 12px 0;
+            }
+
+            & > .bakery-hero-image {
+                margin: 0 0 12px 20px;
+            }
+
+            & > .about-description {
+                font-size: 16px;
+                margin-bottom: 26px;
+            }
+        }
+    }
+}
